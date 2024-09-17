@@ -14,6 +14,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .content {
@@ -44,6 +45,46 @@
         .italic {
             font-style: italic;
         }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            font-family: 'Roboto Mono', monospace;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+
+        /* Styles for the light mode */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        body.light-mode a {
+            color: black;
+        }
+
+        body.light-mode button {
+            border-color: black;
+            color: black;
+        }
+
+        body.light-mode button:hover {
+            background-color: black;
+            color: white;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
@@ -54,7 +95,24 @@
         <p>This space is intentionally minimal. No unnecessary frills. Just a simple gateway to some of my work and ideas.</p>
         <p class="italic">Code is open. Trust is earned.</p>
         <p><a href="https://github.com/xbaiko" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/tobeadded" target="_blank">LinkedIn</a></p>
+        
+        <div class="buttons">
+            <button onclick="setPunkMode()">punk</button>
+            <button onclick="setLightMode()">light</button>
+        </div>
     </div>
+
+    <script>
+        // Function to set PUNK mode (Dark Mode)
+        function setPunkMode() {
+            document.body.classList.remove('light-mode'); // Remove light mode class
+        }
+
+        // Function to set Light Mode (Classic Mode)
+        function setLightMode() {
+            document.body.classList.add('light-mode'); // Add light mode class
+        }
+    </script>
 </body>
 </html>
 
